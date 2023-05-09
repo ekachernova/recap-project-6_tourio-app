@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const locationSchema = new Schema({
+const placeSchema = new Schema({
   name: { type: String, required: true },
   location: { type: String },
   image: { type: String },
@@ -9,7 +9,6 @@ const locationSchema = new Schema({
   description: { type: String },
 });
 
-const Location =
-  mongoose.models.Product || mongoose.model("Location", locationSchema);
+const Place = mongoose.models.Place || mongoose.model("Place", placeSchema);
 
-export default Location;
+export default Place;

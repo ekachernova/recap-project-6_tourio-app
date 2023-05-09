@@ -1,12 +1,12 @@
 import dbConnect from "db/connect";
-import Location from "db/models/Location";
+import Place from "db/models/Place";
 
 export default async function handler(request, response) {
   await dbConnect();
 
   if (request.method === "GET") {
-    const locations = await Location.find();
-    return response.status(200).json(locations);
+    const places = await Place.find();
+    return response.status(200).json(places);
   }
 }
 
