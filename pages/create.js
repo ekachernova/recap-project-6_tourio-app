@@ -21,6 +21,10 @@ export default function CreatePlacePage() {
         "Content-Type": "application/json",
       },
     });
+    if (!response.ok) {
+      console.error("Couldn't create a place", response.status);
+      return;
+    }
     router.push("/");
   }
 
