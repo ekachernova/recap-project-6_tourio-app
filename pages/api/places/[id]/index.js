@@ -15,4 +15,9 @@ export default async function handler(request, response) {
     response.status(200).json(placeToUpdate);
     // response.status(200).json({ status: "Successfully updated!" });
   }
+  if (request.method === "DELETE") {
+    const placeToDelete = await Place.findByIdAndDelete(id);
+    response.status(200).json(placeToDelete);
+    // response.status(200).json({ status: "Successfully deleted!" });
+  }
 }

@@ -35,8 +35,11 @@ export default function DetailsPage() {
   const { data: place, isLoading, error } = useSWR(`/api/places/${id}`);
   if (!isReady || isLoading || error) return <h2>Loading...</h2>;
 
-  function deletePlace() {
-    console.log("deleted?");
+  async function deletePlace() {
+    await fetch(`/api/places/${id}`, {
+      method: "DELETE",
+    });
+    router.push("/");
   }
 
   return (
