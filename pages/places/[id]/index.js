@@ -25,7 +25,14 @@ const ButtonContainer = styled.section`
 const StyledLocationLink = styled(StyledLink)`
   text-align: center;
   background-color: white;
-  border: 3px solid lightsalmon;
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+`;
+
+const StyledHeader = styled.h2`
+  margin: 0;
+  margin-bottom: 0.8rem;
 `;
 
 export default function DetailsPage() {
@@ -45,7 +52,9 @@ export default function DetailsPage() {
   return (
     <>
       <Link href={"/"} passHref legacyBehavior>
-        <StyledLink justifySelf="start">back</StyledLink>
+        <StyledLink justifySelf="start" position="absolute">
+          back
+        </StyledLink>
       </Link>
       <ImageContainer>
         <StyledImage
@@ -58,9 +67,9 @@ export default function DetailsPage() {
           alt=""
         />
       </ImageContainer>
-      <h2>
+      <StyledHeader>
         {place.name}, {place.location}
-      </h2>
+      </StyledHeader>
       <Link href={place.mapURL} passHref legacyBehavior>
         <StyledLocationLink>Location on Google Maps</StyledLocationLink>
       </Link>
