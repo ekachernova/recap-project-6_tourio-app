@@ -10,6 +10,7 @@ const Headline = styled.h1`
   padding: 20px;
   text-align: center;
   z-index: 1;
+  border-radius: 0.8rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;

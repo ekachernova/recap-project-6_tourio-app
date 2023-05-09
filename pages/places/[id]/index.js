@@ -13,8 +13,8 @@ const ImageContainer = styled.div`
 
 const ButtonContainer = styled.section`
   display: flex;
-  justify-content: space-between;
-  gap: 0.2rem;
+  justify-content: space-around;
+  gap: 2rem;
 
   & > * {
     flex-grow: 1;

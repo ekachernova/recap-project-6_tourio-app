@@ -9,19 +9,27 @@ const FormContainer = styled.form`
 const Input = styled.input`
   padding: 0.5rem;
   font-size: inherit;
-  border: 3px solid black;
+  border: 3px solid transparent;
   border-radius: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
 
 const Textarea = styled.textarea`
   font-family: inherit;
-  border: 3px solid black;
+  border: 3px solid transparent;
   border-radius: 0.5rem;
   padding: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
 
 const Label = styled.label`
   font-weight: bold;
+`;
+
+const StyledAddButton = styled(StyledButton)`
+  margin-top: 1rem;
 `;
 
 export default function Form({ onSubmit, formName, defaultData }) {
@@ -71,9 +79,9 @@ export default function Form({ onSubmit, formName, defaultData }) {
         rows="10"
         defaultValue={defaultData?.description}
       ></Textarea>
-      <StyledButton type="submit">
+      <StyledAddButton type="submit">
         {defaultData ? "Update place" : "Add place"}
-      </StyledButton>
+      </StyledAddButton>
     </FormContainer>
   );
 }

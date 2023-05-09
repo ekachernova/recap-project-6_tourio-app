@@ -7,6 +7,10 @@ import useSWR from "swr";
 
 const StyledBackLink = styled(StyledLink)`
   justify-self: flex-start;
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  z-index: 1;
 `;
 
 export default function CreatePlacePage() {
@@ -30,10 +34,10 @@ export default function CreatePlacePage() {
 
   return (
     <>
-      <h2 id="add-place">Add Place</h2>
       <Link href="/" passHref legacyBehavior>
         <StyledBackLink>back</StyledBackLink>
       </Link>
+      <h2 id="add-place">Add Place</h2>
       <Form onSubmit={addPlace} formName={"add-place"} />
     </>
   );
