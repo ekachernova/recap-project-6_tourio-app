@@ -3,9 +3,11 @@ import styled from "styled-components";
 import { StyledImage } from "./StyledImage.js";
 
 const Article = styled.article`
-  border: 5px solid black;
+  border: 5px solid transparent;
   border-radius: 0.8rem;
   padding: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 `;
 
 const ImageContainer = styled.div`
@@ -56,7 +58,9 @@ export default function Card({ name, image, location, id }) {
             alt=""
           />
         </ImageContainer>
-        <figcaption>{name}</figcaption>
+        <figcaption>
+          <strong>{name}</strong>
+        </figcaption>
       </Figure>
       <p>Location: {location}</p>
       <Link href={`places/${id}`} passHref legacyBehavior>
